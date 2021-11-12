@@ -7,7 +7,7 @@ export default function App() {
     <View style={styles.container}>
 
         <View style={{flex:2, flexDirection:'column',
-              alignItems:'center',justifyContent:'space-around',backgroundColor:'yellow',}}>
+              alignItems:'center',justifyContent:'space-between',backgroundColor:'yellow',}}>
 
               <Text style={styles.header}>
                   Trip Planner App
@@ -43,11 +43,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'stretch',
-    justifyContent: 'stretch',
+    alignItems: 'center',
+    justifyContent: 'center',
     flexDirection:'column',
-    margin:'20px',
-    border:'thick solid black',
+    //margin:'20px',
   },
 
    header: {

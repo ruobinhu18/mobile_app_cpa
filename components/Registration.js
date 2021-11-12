@@ -43,11 +43,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'stretch',
-    justifyContent: 'stretch',
+    alignItems: 'center',
+    justifyContent: 'center',
     flexDirection:'column',
-    margin:'20px',
-    border:'thick solid black',
+    //margin:'20px',
   },
 
    header: {

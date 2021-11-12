@@ -2,11 +2,14 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { StyleSheet, Text, View, Button, } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
 
 import AboutScreen from './About'
 import RegistraionScreen from './Registration'
 import BudgetScreen from './Budget'
+import PopularScreen from './Popular'
+import ScreenDemoScreen from './ScreenDemo'
+
 
 
 const Stack = createNativeStackNavigator();
@@ -30,6 +33,9 @@ const MyStack = () => {
             {props => <BudgetScreen {...props} taxRate={0.3} component={BudgetScreen} />}
 
         </Stack.Screen>
+          <Stack.Screen name="Popular" component={PopularScreen} />
+
+          <Stack.Screen name="ScreenDemo" component={ScreenDemoScreen} />
 
       </Stack.Navigator>
     </NavigationContainer>
@@ -39,11 +45,8 @@ const MyStack = () => {
 
 const HomeScreen = ({ navigation }) => {
   return (
-      <View style={{ flexDirection: 'row',
-                     margin:"25px",
-                     border:"thick solid black",
-                     padding:'10px',
-                     justifyContent: 'space-around', }}>
+      <View style={{ flexDirection: 'column',
+                     justifyContent: 'space-between', }}>
 
         <Button
           title="Go to About"
@@ -66,6 +69,25 @@ const HomeScreen = ({ navigation }) => {
             navigation.navigate('Budget')
           }
         />
+
+         <Button
+          title="Description of a place"
+          onPress={() =>
+            navigation.navigate('ScreenDemo')
+          }
+        />
+        <TouchableOpacity
+            onPress={() =>
+            navigation.navigate('Popular')
+          }
+
+        >
+               <Text style={{color:'blue', fontSize:20}}> {"Top national parks"}</Text>
+
+             </TouchableOpacity>
+
+
+
     </View>
   );
 };
