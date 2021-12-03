@@ -6,10 +6,11 @@ import Budget from "./components/Budget";
 import Popular from "./components/Popular";
 import CounterDemoWithContext from "./components/CounterDemoWithContext";
 import ScreenDemo from "./components/ScreenDemo";
+import NavContext from "./components/NavContext"
 
 export default function App() {
   return (
-   <NavDemo1/>
+   <NavContext/>
   );
 }
 
