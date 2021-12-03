@@ -9,7 +9,8 @@ import RegistraionScreen from './Registration'
 import BudgetScreen from './Budget'
 import PopularScreen from './Popular'
 import ScreenDemoScreen from './ScreenDemo'
-
+import Login from './Login'
+import ShowProfile from './ShowProfile'
 
 
 const Stack = createNativeStackNavigator();
@@ -24,6 +25,20 @@ const MyStack = () => {
           component={HomeScreen}
           options={{ title: 'Trip Planner' }}
         />
+
+
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          //options={{ title: 'Welcome' }}
+        />
+
+         <Stack.Screen
+          name="ShowProfile"
+          component={ShowProfile}
+          //options={{ title: 'Welcome' }}
+        />
+
 
         <Stack.Screen name="About" component={AboutScreen} />
 
@@ -62,6 +77,22 @@ const HomeScreen = ({ navigation }) => {
             navigation.navigate('Registration')
           }
         />
+
+        <Button
+           title="Login"
+           onPress={() =>
+           navigation.navigate('Login')
+                // we're passing a parameter name:'Jane' to the Profile component!
+           }
+         />
+
+          <Button
+           title="Show Profile"
+           onPress={() =>
+             navigation.navigate('ShowProfile')
+                // we're passing a parameter name:'Jane' to the Profile component!
+           }
+         />
 
         <Button
           title="Calculate the budget for the trip"
